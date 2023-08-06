@@ -177,3 +177,88 @@ const data = [
         rating: { rate: 3.6, count: 145 }
     }
 ]
+
+// function addChild(parent, child, text){
+//     // creat & definition new tag.
+//     const newChi = document.createElement(child);
+//     newChi.textContent = text;
+//     parent.appendChild(newChi)
+// }
+
+function creatCard(main, elem){
+    const card = document.createElement("div");
+    card.setAttribute('class','card');
+    
+    const dataDiv = document.createElement("div");
+    const img = document.createElement("img");
+    img.src = elem.image
+    img.setAttribute('class','imgs');
+    dataDiv.appendChild(img);
+    card.appendChild(dataDiv);
+    
+    const productName = document.createElement('h3');
+    productName.textContent = elem.title;
+    card.appendChild(productName);
+    
+    const hr = document.createElement("hr");
+    card.appendChild(hr);
+    
+    const inventoryDiv = document.createElement("div");
+    inventoryDiv.setAttribute('class','inventor');
+    
+    // const quantity = document.createElement('span');
+    // quantity.textContent = Math.floor(Math.random()*100);
+    // const plus = document.createElement('button');
+    // const minus = document.createElement('button');
+    // inventoryDiv.appendChild(plus);
+    // inventoryDiv.appendChild(quantity);
+    // inventoryDiv.appendChild(minus);
+    const editing = document.createElement('i');
+    editing.setAttribute('class','fa-solid fa-pen');
+    const deleting = document.createElement('i');
+    deleting.setAttribute('class','fa-solid fa-trash');
+    inventoryDiv.appendChild(editing);
+    inventoryDiv.appendChild(deleting);
+    card.appendChild(inventoryDiv);
+    
+    main.appendChild(card);
+    
+  }
+    
+
+
+function cardFormat(body, element, card) {
+   
+  
+}
+  
+//     let butMail = document.createElement("button");
+//     butMail.onclick = () => chengEmailInfo(element.email);
+//     const claButMail = butMail.classList;
+//     claButMail.add("butMail");
+//     card.appendChild(butMail);
+  
+//     let pMail = document.createElement("p");
+//     addEmailInfo(pMail, element.email);
+//     card.appendChild(pMail);
+  
+//     let hrAddress = document.createElement("h2");
+//     hrAddress.textContent = "כתובת מלאה";
+//     card.appendChild(hrAddress);
+  
+//     let pAddress = document.createElement("p");
+//     addAddressInfo(pAddress, element.address);
+//     card.appendChild(pAddress);
+//   }
+
+  
+
+const bodyDoc = document.getElementById("main");
+
+
+for (let index = 0; index < data.length; index++) {
+    const element = data[index];
+    
+    creatCard(bodyDoc,element);
+    
+}

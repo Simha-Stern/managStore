@@ -46,10 +46,58 @@ header{
     border-radius: 10px 0 0 10px;
 }
 
+main{
+    background-color: #ffdecb;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+main:first-child{
+    display: flex;
+    justify-content: center;
+}
+
 #search :last-child{
     border: 0;
     min-width: 1vw;
     border-radius: 0 10px 10px 0;
+}
+
+#main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h1{
+    /* margin: 30px; */
+    position: relative;
+
+}
+
+.imgs{
+    height: 100px;
+    width: 100px;
+
+}
+
+
+
+.card{
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 17%;
+}
+
+.editDelet{
+
+}
+
+.inventor{
+
 }
 
 
@@ -57,9 +105,8 @@ header{
 
 
 
-
 footer{
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     display: flex;
     justify-content: center;
