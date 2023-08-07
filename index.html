@@ -18,17 +18,17 @@
     <header>
       <div>Inventory Managment</div>
       <div>
-        <a id="home"><i class="fa-solid fa-house"></i></a>
-        <a id="add"><i class="fa-solid fa-plus"></i></a>
+        <a id="home" href="C:/Users/USER_PC/Documents/kodcode/projects/first%20project/index.html"><i class="fa-solid fa-house"></i></a>
+        <a id="add" href="#" ><i class="fa-solid fa-plus"></i></a>
       </div>
     </header>
     <article id="selects">
       <div>
-        <button class="select">All Products</button>
-        <button class="select">Man</button>
-        <button class="select">Women</button>
-        <button class="select">Jewelery</button>
-        <button class="select">Electronics</button>
+        <button class="select" onclick="sort(0)">All Products</button>
+        <button class="select" onclick="sort(1)">Man</button>
+        <button class="select" onclick="sort(2)">Women</button>
+        <button class="select" onclick="sort(3)">Jewelery</button>
+        <button class="select" onclick="sort(4)">Electronics</button>
       </div>
       <nav id="search">
         <input type="text" placeholder="Search..." name="search"/>
@@ -36,10 +36,9 @@
       </nav>
     </article>
     <main>
-        <div>
+        <div id="heads">
             <h1>Products</h1>
         </div>
-        <br>
         <div id="main"></div>
     </main>
     <footer>

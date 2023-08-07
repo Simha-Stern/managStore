@@ -1,121 +1,161 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-header{
-    background-color: #ffdecb;
-    color: #4d4d4d;
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    position:sticky;
+
+header {
+  background-color: #ffdecb;
+  color: #4d4d4d;
+  padding: 10px 15px;
+  width: 96.3vw;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  height: 25px;
 }
 
 #home{
-    margin: 20px;
+  margin: 20px;
 }
 
-#selects{
-    background-color: #ffbf9b;
-    padding: 15px 10%;
-    display: flex;
-    justify-content: space-between;  
+#home:hover, #add:hover{
+    zoom: 120%;
 }
 
-.select{
-    background-color: #ffbf9b;
-    border: 1px solid black;
-    border-radius: 30px;
-    margin: 1px;
-    padding: 5px 15px;
-
+#selects {
+  background-color: #ffbf9b;
+  padding: 15px 10%;
+  display: flex;
+  justify-content: space-between;
+  /* position: relative;
+  top: 40px; */
 }
 
-.select:hover{
-    background-color: #ffdecb;
+.select {
+  background-color: #ffbf9b;
+  border: 1px solid black;
+  border-radius: 30px;
+  margin: 1px;
+  padding: 5px 15px;
 }
 
-#search{
-    display: inline-flex;
+.select:focus {
+  background-color: #ffdecb;
 }
 
-#search :first-child{
-    border: 0;
-    padding: 0 20px;
-    min-width: 20vw;
-    border-radius: 10px 0 0 10px;
+.select:hover {
+  background-color: #ffdecb;
+  cursor: pointer;
 }
 
-main{
-    background-color: #ffdecb;
-    min-height: 80vh;
-    padding: 20px;
+#search {
+  display: inline-flex;
 }
 
-main:first-child{
-    display: flex;
-    justify-content: center;
+#search input {
+  border: 0;
+  padding: 0 20px;
+  min-width: 20vw;
+  border-radius: 10px 0 0 10px;
 }
 
-#search :last-child{
-    border: 0;
-    min-width: 1vw;
-    border-radius: 0 10px 10px 0;
+#search button {
+  border: 0;
+  min-width: 2vw;
+  border-radius: 0 10px 10px 0;
 }
 
-#main{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+#search button:hover {
+  cursor: pointer;
 }
 
-h1{
-    /* margin: 30px; */
-    position: relative;
-
+main {
+  background-color: #fcebe2;
+  min-height: 80vh;
+  padding: 0 20px;
 }
 
-.imgs{
-    height: 100px;
-    width: 100px;
-
+#heads {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  padding: 30px;
 }
 
-
-
-.card{
-    border: 1px solid black;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 17%;
+#main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
 }
 
-.editDelet{
-
+h1 {
+  /* margin: 30px; */
+  position: relative;
 }
 
-.inventor{
-
+.imgs {
+  height: 230px;
+  width: 230px;
+  border-radius: 15px 15px 0 0;
 }
 
-
-
-
-
-
-footer{
-    /* position: fixed; */
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #4d4d4d;
-    color: white;
-    width: 100%;
-    padding: 15px;
+.card {
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 230px;
+  margin: 30px;
+  background-color: #ffdecb;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0;
+  margin-bottom: 100px;
 }
 
-footer *{
-    margin: 20px;
+h3 {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.edit * {
+  margin: 15px;
+}
+
+.inventor * {
+  border-radius: 50%;
+  background-color: #ffbf9b;
+  margin: 10px;
+  padding: 6px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+}
+.inventor {
+  display: flex;
+  justify-content: center;
+}
+
+.inventor span {
+  height: 25px;
+  width: 25px;
+  font-size: 22px;
+}
+
+footer {
+  /* position: fixed; */
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #4d4d4d;
+  color: white;
+  width: 96.3vw;
+  padding: 15px;
+}
+
+footer * {
+  margin: 20px;
 }

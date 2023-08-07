@@ -177,7 +177,10 @@ const data = [
         rating: { rate: 3.6, count: 145 }
     }
 ]
-
+data.forEach(elem => {
+    
+    elem.quantity = Math.floor(Math.random()*100);
+});
 // function addChild(parent, child, text){
 //     // creat & definition new tag.
 //     const newChi = document.createElement(child);
@@ -185,8 +188,9 @@ const data = [
 //     parent.appendChild(newChi)
 // }
 
-function creatCard(main, elem){
+function creatCard(main, elem,i){
     const card = document.createElement("div");
+    card.value = elem.category;
     card.setAttribute('class','card');
     
     const dataDiv = document.createElement("div");
@@ -200,28 +204,49 @@ function creatCard(main, elem){
     productName.textContent = elem.title;
     card.appendChild(productName);
     
-    const hr = document.createElement("hr");
-    card.appendChild(hr);
-    
     const inventoryDiv = document.createElement("div");
     inventoryDiv.setAttribute('class','inventor');
     
-    // const quantity = document.createElement('span');
-    // quantity.textContent = Math.floor(Math.random()*100);
-    // const plus = document.createElement('button');
-    // const minus = document.createElement('button');
-    // inventoryDiv.appendChild(plus);
-    // inventoryDiv.appendChild(quantity);
-    // inventoryDiv.appendChild(minus);
+
+    const quantity = document.createElement('span');
+    quantity.textContent = elem.quantity;
+    const plus = document.createElement('i');
+    plus.setAttribute('class',"fa-solid fa-plus")
+    const minus = document.createElement('i');
+    minus.setAttribute('class',"fa-solid fa-minus")
+    inventoryDiv.appendChild(plus);
+    inventoryDiv.appendChild(quantity);
+    inventoryDiv.appendChild(minus);
+    card.appendChild(inventoryDiv);
+
+    plus.addEventListener('click',() => {
+        elem.quantity++;
+        quantity.textContent = elem.quantity;
+    });
+    minus.addEventListener('click',() => {
+        elem.quantity--;
+        quantity.textContent = elem.quantity;
+    });
+
+
+    const editDiv = document.createElement("div");
+    editDiv.setAttribute('class','edit');
     const editing = document.createElement('i');
     editing.setAttribute('class','fa-solid fa-pen');
     const deleting = document.createElement('i');
     deleting.setAttribute('class','fa-solid fa-trash');
-    inventoryDiv.appendChild(editing);
-    inventoryDiv.appendChild(deleting);
-    card.appendChild(inventoryDiv);
+
+    editDiv.appendChild(editing);
+    editDiv.appendChild(deleting);
+    card.appendChild(editDiv);
     
     main.appendChild(card);
+
+    deleting.addEventListener('click',() => {
+        main.removeChild(card);
+        data.slice(i, i+1);
+    });
+
     
   }
     
@@ -259,6 +284,54 @@ const bodyDoc = document.getElementById("main");
 for (let index = 0; index < data.length; index++) {
     const element = data[index];
     
-    creatCard(bodyDoc,element);
+    creatCard(bodyDoc,element,index);
     
 }
+function sort(value) {
+    addEventListener('click', ()=>{
+        switch (value) {
+            case 1:
+                bodyDoc.innerHTML = '';
+                for (let index = 0; index < data.length; index++) {
+                    if (data[index].category === "men's clothing"){
+                    const element = data[index];
+                    creatCard(bodyDoc,element);
+                }}
+                break;
+                case 2:
+                    bodyDoc.innerHTML = '';
+
+                    for (let index = 0; index < data.length; index++) {
+                        if (data[index].category === "women's clothing"){
+                        const element = data[index];
+                        creatCard(bodyDoc,element);
+                    }}
+                break;
+                
+                case 3:
+                    bodyDoc.innerHTML = '';
+
+                    for (let index = 0; index < data.length; index++) {
+                        if (data[index].category === 'jewelery'){
+                        const element = data[index];
+                        creatCard(bodyDoc,element);
+                    }}
+                break;
+                            case 4:
+                                bodyDoc.innerHTML = '';
+                                for (let index = 0; index < data.length; index++) {
+                                    if (data[index].category === 'electronics'){
+                                    const element = data[index];
+                                    creatCard(bodyDoc,element);
+                                }}
+                break;        
+            default:
+                bodyDoc.innerHTML = '';
+                for (let index = 0; index < data.length; index++) {
+                    const element = data[index];
+                    creatCard(bodyDoc,element);
+                }
+                break;
+        }
+    })
+            }
